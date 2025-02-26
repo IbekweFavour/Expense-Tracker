@@ -11,7 +11,7 @@ def add_expences():
 			break
 		except ValueError:
 			print("Invalid Date Format! Please use YYYY-MM-DD.")
-			
+	return date
 
 	while True:
 		try:
@@ -41,18 +41,21 @@ def add_expences():
 	
 	expense = {"date": date, "description": description, "amount": amount}
 	expences.append(expense)	
+	return expences
 
 
 def view_expenses():
 	print("Expenses:\n")
 	for expence in expences:
-	        print(f"Date: {expence['date']}, Description: {expence['description']}, Amount: {expence['amount']}")	
+	        expense_list.append(f"Date: {expence['date']}, Description: {expence['description']}, Amount: {expence['amount']}")
+	return expence
 
 	
 
 def total_expenses():
 	total = sum(expence['amount'] for expence in expences)
 	print(f"\nTotal Expenses:  ₦{total}")
+	return total
 
 
 
